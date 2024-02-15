@@ -13,14 +13,6 @@ class CustomUser(AbstractUser):
     )
 
     role = models.CharField(max_length=20, choices=USER_ROLES, default=AUTHENTICATED_USER)
-    
-    class Meta:
-        # Add unique related_name for groups and user_permissions
-        permissions = [
-            ('add_custom_user_permission', 'Can add custom user permission'),
-            ('change_custom_user_permission', 'Can change custom user permission'),
-            ('delete_custom_user_permission', 'Can delete custom user permission'),
-        ]
 
 class Author(models.Model):
     name = models.CharField(max_length=100)
